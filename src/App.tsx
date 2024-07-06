@@ -1,9 +1,9 @@
-import Sidebar from "./assets/components/shared/sidebar";
+import MenuSideBar from "./components/template/MenuSideBar";
 
 function App() {
     return (
         <>
-            <Sidebar />
+            <MenuSideBar />
         </>
     );
 }

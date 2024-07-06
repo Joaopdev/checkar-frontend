@@ -1,25 +1,26 @@
 import { FaBars, FaTimes } from "react-icons/fa";
 import styled from "styled-components";
 
-interface SidebarContainerProps {
-	isOpen: boolean;
-}
-
 export const SideBarWrapper = styled.div`
 	position: fixed;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
+	p {
+		color: red;
+		z-index: 9999;
+		margin: 20px 60px;
+	}
 `;
 
-export const SidebarContainer = styled.div<SidebarContainerProps>`
+export const SidebarContainer = styled.div`
 	height: 100vh;
-	width: ${(props) => (props.isOpen ? "250px" : "60px")};
+	width: 250px;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: #111;
+	background-color: #fff;
 	overflow-x: hidden;
 	transition: 0.3s;
 	padding-top: 60px;
@@ -40,7 +41,7 @@ export const SidebarButton = styled.button`
 	z-index: 9800;
 `;
 
-export const SidebarLink = styled.button<SidebarContainerProps>`
+export const SidebarLink = styled.button`
 	padding: 10px 15px;
 	text-decoration: none;
 	font-size: 18px;
@@ -63,24 +64,28 @@ export const SidebarLink = styled.button<SidebarContainerProps>`
 	}
 
 	svg {
-		margin-right: ${(props) => (props.isOpen ? "10px" : "0")};
+		margin-right: 10px;
 		transition: margin-right 0.3s;
 	}
 `;
 
 export const MenuIcon = styled(FaBars)`
-	color: white;
+	color: black;
 	font-size: 24px;
 	z-index: 9900;
+	margin-left: 12px;
+	margin-top: 12px;
 `;
 
 export const CloseIcon = styled(FaTimes)`
-	color: white;
+	color: black;
 	font-size: 24px;
+	margin-left: 12px;
+	margin-top: 12px;
 `;
 
-export const Overlay = styled.div<SidebarContainerProps>`
-	display: ${(props) => (props.isOpen ? "block" : "none")};
+export const Overlay = styled.div`
+	display: block;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -100,4 +105,3 @@ export const MenuOptionText = styled.p`
 		color: #f1f1f1;
 	}
 `;
-
